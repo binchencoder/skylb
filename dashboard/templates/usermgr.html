@@ -1,0 +1,88 @@
+<html go:import="pb: proto.proto">
+
+<div go:template="ManageUsers"
+     go:arg="users: []*pb.UserInfo"
+     class="usermgr-panel content-container">
+  <h2>Users Managerment</h2>
+
+  <div class="users-list">
+    <div go:for="user[pb]: users"
+         go:attr="class: 'disabled' if (user.disabled)"
+         class="user-card">
+      <div class="title">
+        <span go:content="user.login_name"></span>
+        <img src="/static/images/edit.svg" class="edit">
+      </div>
+      <div>
+        <span go:if="user.disabled"><img src="/static/images/incorrect.svg" class="disabled"> Disabled</span>
+        <span go:if="!user.disabled"><img src="/static/images/correct.svg" class="enabled"> Enabled</span>
+      </div>
+    </div>
+    <div class="user-card create-user" title="Create a new user">
+      <img src="/static/images/create.svg" class="create-user">
+    </div>
+  </div>
+</div>
+
+
+<div go:template="AddOrEditUser"
+     go:arg="user[pb]: *pb.UserInfo"
+     class="add-edit-user">
+  <table class="table table-striped table-hover table-condensed add-edit-user-table">
+    <tr>
+      <td>Login Name:</td>
+      <td>
+        <input type="text" name="username" class="username-input input-box"
+               go:attr="readOnly: 'true' if (user.login_name != '')"
+               go:attr="value: user.login_name if (user.login_name != '')">
+        <input type="hidden" name="version" class="version-input input-box"
+               go:attr="value: user.version">
+      </td>
+    </tr>
+    <tr>
+      <td>Roles:</td>
+      <td>
+        <div class="checkbox">
+          <div class="user-role-checkbox">
+            <label>
+            <input type="checkbox" name="is_admin" class="is-admin-input"
+                   go:attr="checked: 'true' if (user.is_admin)"> Admin
+            </label>
+          </div>
+          <div class="user-role-checkbox">
+            <label>
+            <input type="checkbox" name="is_dev" class="is-dev-input"
+                   go:attr="checked: 'true' if (user.is_dev)"> Developer
+            </label>
+          </div>
+          <div class="user-role-checkbox">
+            <label>
+            <input type="checkbox" name="is_ops" class="is-ops-input"
+                   go:attr="checked: 'true' if (user.is_ops)"> OPS
+            </label>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <div class="user-role-checkbox">
+          <label>
+          <input type="checkbox" name="disabled" class="is-disabled"
+                 go:attr="checked: 'true' if (user.disabled)"> Disabled
+          </label>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="user-edit-errors" colspan="2"></td>
+    </tr>
+  </table>
+  <div class="buttons">
+    <input type="button" class="save-button" value="Save">
+  </div>
+</div>
+
+</html>

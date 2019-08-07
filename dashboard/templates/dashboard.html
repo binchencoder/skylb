@@ -1,0 +1,77 @@
+<html lang="en"
+      go:import="pb: github.com/binchencoder/skylb/dashboard/proto"
+      go:template="MainPage"
+      go:arg="user: *pb.UserInfo">
+<head>
+<title>SkyLB Dashboard @ Jingoal Inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/static/images/favicon.png" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<link rel="stylesheet" href="/static/styles/bootstrap-3.3.7.min.css" />
+<link rel="stylesheet" href="/static/styles/bootstrap-theme-3.3.7.min.css" />
+<link rel="stylesheet" href="/static/styles/skylb-0.1.0.min.css" />
+<link rel="stylesheet" href="/static/styles/vis-4.21.0.min.css" />
+</head>
+<body go:attr="data-viewer: user.LoginName">
+<div id="outer-container">
+  <nav id="top-panel" class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <img src="/static/images/logo.svg" class="logo" title="SkyLB Dashboard @ Jingoal Inc"></img>
+      </div>
+      <div class="navbar-header">
+        <div class="nav-buttons">
+          <img go:if="user.IsAdmin"
+               src="/static/images/users.svg"
+               title="Users"
+               class="button skylb-users"></img>
+        </div>
+      </div>
+      <div class="navbar-header">
+        <div class="nav-buttons">
+          <img src="/static/images/logs.svg"
+               title="Logs"
+               class="button skylb-logs"></img>
+        </div>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        You logged in as
+        <span id="loginUser"
+              class="clickable unselectable"
+              go:content="user.LoginName"></span>
+      </div>
+    </div>
+  </nav>
+
+  <div id="view-container" class="container">
+    <div class="view loading">Loading ...</div>
+  </div>
+
+  <div id="login-container"
+       class="login-container modal fade"
+       role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Session expired, please login.</h4>
+        </div>
+
+        <div class="modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="me-dropdown" class="skylb-dropdown hidden unselectable">
+    <div class="skylb-dropdown-item btn-logout">Logout</div>
+  </div>
+
+  <script src="/static/scripts/vis-4.21.0.min.js"></script>
+  <script src="/static/scripts/skylb-0.1.0.min.js"></script>
+  <script>
+    skylb.main();
+  </script>
+</div>
+</body>
+</html>

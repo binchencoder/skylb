@@ -1,0 +1,21 @@
+<html go:import="pb: proto.proto">
+
+<div go:template="Home"
+     go:arg="services: []*pb.ServiceInfo"
+     class="home content-container">
+  <h2>Services (<notag go:omit-tag="true" go:content="len(services)"></notag> in total)</h2>
+  <div>
+    <table class="home-services">
+      <tr go:for="s[pb]: services"
+          go:attr="data-id: s.id"
+          class="service-row">
+        <td go:content="s.name"
+              class="home-service-name"></td>
+        <td go:content="s.id"
+              class="home-service-id"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</html>

@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: skylb
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: skylb
+        tier: infra
+    spec:
+      containers:
+      - name: skylb
+        image: {{.DockerRegistryHostPort}}/skylb:0.1.0
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        command:
+          - /skylb/bin/skylb
+          - --etcd-endpoints=http://{{.KubernetesMasterIp}}:{{.SkybridgeEtcdClientPort}}
+        ports:
+        - containerPort: 1900
+          protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: skylb
+  labels:
+    app: skylb
+    tier: infra
+spec:
+  ports:
+  - port: 1900
+    targetPort: 1900
+  selector:
+    name: skylb
+    tier: infra

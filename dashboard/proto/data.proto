@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package proto;
+
+// UserInfo represents a user record.
+message UserInfo {
+	string login_name = 1;
+	bool   disabled   = 2;
+	int32  version    = 3;
+
+	bool is_admin  = 4;
+	bool is_dev    = 5;
+	bool is_ops    = 6;
+}
+
+message InstanceInfo {
+	string address  = 1;
+	bool   lameduck = 2;
+}
+
+// ServiceInfo represents a service info.
+message ServiceInfo {
+	int32  id   = 1;
+	string name = 2;
+
+	repeated InstanceInfo instances = 10;
+
+	repeated ServiceInfo incomings = 11;
+	repeated ServiceInfo outgoings = 12;
+}
+
+// LogInfo represents a log info.
+message LogInfo {
+	string operator = 1;
+	string service  = 2;
+	string content  = 3;
+	int64  op_time  = 4; // UTC.
+}

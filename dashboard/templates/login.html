@@ -1,0 +1,25 @@
+<html lang="en"
+      go:template="LoginPage">
+<head>
+<title>SkyLB Dashboard @ Jingoal Inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<link rel="stylesheet" href="/static/styles/bootstrap-3.3.7.min.css" />
+<link rel="stylesheet" href="/static/styles/bootstrap-theme-3.3.7.min.css" />
+<link rel="stylesheet" href="/static/styles/skylb-0.1.0.min.css" />
+</head>
+<body class="login">
+
+<img src="/static/images/skylb.svg" style="position: fixed; left: 50px; top: 50px; width: 264px;">
+
+<div class="main-box">
+  <form action="/login" method="post">
+    <div go:call="loginbox.html#LoginBox"
+         go:arg="loginname: ''"></div>
+  </form>
+</div>
+
+</body>
+</html>

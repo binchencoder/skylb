@@ -1,0 +1,47 @@
+<html go:import="pb: proto.proto">
+
+  <div go:template="Logs"
+       go:arg="operator: string"
+       go:arg="service_id: number"
+       go:arg="logs[pb]: []*pb.LogInfo"
+       go:arg="services[pb]: []*pb.ServiceInfo"
+       class="logs content-container">
+    <h2>Operation Logs (Top 100)</h2>
+
+    <div>
+        Operator: <input type="text" class="filter-operator" go:attr="value: operator">
+        Service:
+        <select class="filter-service">
+            <option value="-1">All services</option>
+            <option go:for="svc[pb]: services"
+                    go:attr="value: svc.id"
+                    go:attr="selected: 'selected' if (svc.id == service_id)"
+                    go:content="svc.name"></option>
+        </select>
+        <input type="button" class="btn-filter" value="Filter">
+    </div>
+
+    <table go:if="len(logs)>0"
+           class="logs-table">
+        <tr>
+            <th>Operator</th>
+            <th>Service</th>
+            <th>Action</th>
+            <th>Local Time</th>
+        </tr>
+        <tr go:for="log[pb]: logs">
+            <td go:content="log.operator"
+                class="col-operator"></td>
+            <td go:content="log.service"
+                class="col-service"></td>
+            <td go:content="log.content"
+                class="col-content"></td>
+            <td go:content="log.op_time"
+                class="col-op-time"></td>
+        </tr>
+    </table>
+    <div go:if="len(logs)==0"
+         class="warn-panel">No logs found.</div>
+  </div>
+
+</html>

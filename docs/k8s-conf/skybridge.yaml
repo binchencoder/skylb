@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kube-controller
+spec:
+  hostNetwork: true
+  volumes:
+    - name: "skybridge-etcd-datadir"
+      hostPath:
+        path: "/var/lib/skybridge-etcd"
+  containers:
+    - name: skybridge-etcd
+      image: gcr.io/google_containers/etcd:3.0.4
+      command:
+        - "/usr/local/bin/etcd"
+        - "--data-dir=/var/lib/etcd"
+        - "--advertise-client-urls=http://{{.KubernetesMasterIp}:{{.SkybridgeEtcdClientPort}}"
+        - "--listen-client-urls=http://{{.KubernetesMasterIp}:{{.SkybridgeEtcdClientPort}}"
+        - "--listen-peer-urls=http://{{.KubernetesMasterIp}:{{.SkybridgeEtcdPeerPort}}"
+        - "--name=skybridge-etcd"
+      volumeMounts:
+        - mountPath: /var/lib/etcd
+          name: "skybridge-etcd-datadir"
+
+    - name: skybridge
+      image: {{.DockerRegistryHostPort}}/skybridge:0.1.0
+      command:
+        - "/skybridge/bin/skybridge"
+        - "--from-etcd-endpoints=http://127.0.0.1:2379"
+        - "--to-etcd-endpoints=http://{{.KubernetesMasterIp}:{{.SkybridgeEtcdClientPort}}"

@@ -1,0 +1,76 @@
+<html go:import="pb: proto.proto">
+
+  <div go:template="Service"
+       go:arg="service[pb]: *pb.ServiceInfo"
+       class="service content-container">
+    <h2>Service &ldquo;<span go:content="service.name"></span>&rdquo; (<span go:content="service.id"></span>)</h2>
+    <div class="graph-viewer"></div>
+    <div class="service-viewer">
+      <notag go:call="#InstancesViewer"
+             go:arg="service: service"></notag>
+    </div>
+  </div>
+
+  <notag go:template="InstancesViewer"
+         go:arg="service[pb]: *pb.ServiceInfo"
+         go:omit-tag="true">
+    <div class="header">
+        <img class="btn-refresh" src="/static/images/refresh.svg"></img>
+        Service &ldquo;<span class="service-name" go:content="service.name"></span>&rdquo; instances
+    </div>
+    <table>
+      <tr go:for="inst[pb]: service.instances_list">
+        <td>
+          <img go:if="!inst.lameduck"
+               go:attr="data-service-address: inst.address"
+               go:attr="data-service-islameduck: inst.lameduck"
+               class="icon server"
+               src="/static/images/server.svg"></img>
+          <img go:if="inst.lameduck"
+               go:attr="data-service-address: inst.address"
+               go:attr="data-service-islameduck: inst.lameduck"
+               class="icon lameduck"
+               src="/static/images/lameduck.png"></img>
+        </td>
+        <td>
+          <div go:content="inst.address"
+               go:attr="title: 'In lameduck state' if (inst.lameduck)"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><span class="btn-add-instance">Add a new instance</span></td>
+      </tr>
+    </table>
+  </notag>
+
+  <div go:template="AddInstance">
+    <div>Add a new service instance and put in lameduck mode:</div>
+    <div class="address-input"></div>
+    <div class="errors"></div>
+    <div class="buttons">
+      <input type="button" class="save-button" value="Save"></input>
+    </div>
+  </div>
+
+  <div go:template="ToggleLameduck"
+       go:arg="service_id: int"
+       go:arg="service_address: string"
+       go:arg="is_lameduck: bool">
+    <div>Toggle service instance lameduck mode:</div>
+    <div go:content="service_address"
+         go:attr="data-service-id: service_id"
+         go:attr="data-service-address: service_address"></div>
+    <div>
+      <label>
+        <input type="checkbox"
+               class="lameduck-input"
+               go:attr="checked: true if (is_lameduck == 'true')"></input> Lameduck mode
+      </label>
+    </div>
+    <div class="errors"></div>
+    <div class="buttons">
+      <input type="button" class="save-button" value="Save"></input>
+    </div>
+  </div>
+
+</html>

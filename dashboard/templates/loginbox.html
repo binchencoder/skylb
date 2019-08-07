@@ -1,0 +1,22 @@
+<html>
+
+  <div go:template="LoginBox"
+       go:arg="loginname: string"
+       class="login-box">
+    <div class="input-row">
+      <span class="title">Login Name: </span>
+      <input go:attr="value: loginname"
+             go:attr="disabled: 'true' if (loginname!='')"
+             type="text" name="loginname" class="loginname-input">
+    </div>
+    <div class="input-row">
+      <span class="title">Password: </span>
+      <input type="password" name="password" class="password-input">
+    </div>
+    <div class="login-errors"></div>
+    <div class="buttons">
+      <input type="submit" name="loginBtn" class="login-button" value="Login">
+    </div>
+  </div>
+
+</html>
