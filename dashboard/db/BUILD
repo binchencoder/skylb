@@ -13,8 +13,8 @@ go_library(
     importpath = "github.com/binchencoder/skylb/dashboard/db",
     deps = [
         "@com_github_binchencoder_letsgo//ldap:go_default_library",
-        "/dashboard/proto:go_default_library",
-        "/dashboard/util:go_default_library",
+        "//dashboard/proto:go_default_library",
+        "//dashboard/util:go_default_library",
         "@com_github_golang_glog//:go_default_library",
         "@com_github_linuxerwang_confish//:go_default_library",
         "@org_golang_x_net//context:go_default_library",

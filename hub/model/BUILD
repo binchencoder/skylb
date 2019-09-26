@@ -12,8 +12,8 @@ go_library(
     ],
     importpath = "github.com/binchencoder/skylb/hub/model",
     deps = [
+        "//hub/util:go_default_library",
         "@com_github_binchencoder_skylb_api//proto:go_default_library",
-        "/hub/util:go_default_library",
         "@com_github_golang_glog//:go_default_library",
         "@com_github_stretchr_testify//mock:go_default_library",
     ],

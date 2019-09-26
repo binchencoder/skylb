@@ -6,9 +6,9 @@ go_binary(
     name = "skylb-dashboard",
     srcs = ["main.go"],
     deps = [
+        "//dashboard:go_default_library",
+        "//dashboard/db:go_default_library",
         "@com_github_binchencoder_letsgo//:go_default_library",
-        "/dashboard:go_default_library",
-        "/dashboard/db:go_default_library",
         "@com_github_kataras_iris//:go_default_library",
     ],
 )
@@ -80,10 +80,10 @@ pkg_tar(
     deps = [
         ":shell-scripts",
         ":skylb-dashboard-tar",
-        "/dashboard/scripts/skylb",
-        "/dashboard/static",
-        "/dashboard/styles",
-        "/docs/dashboard",
+        "//dashboard/scripts/skylb",
+        "//dashboard/static",
+        "//dashboard/styles",
+        "//docs/dashboard",
     ],
 )
 

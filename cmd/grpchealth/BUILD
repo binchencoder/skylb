@@ -13,7 +13,7 @@ go_library(
         "@com_github_binchencoder_skylb_api//client:go_default_library",
         "@com_github_binchencoder_skylb_api//internal/health:go_default_library",
         "@com_github_binchencoder_skylb_api//proto:go_default_library",
-        "/cmd/webserver/svclist:go_default_library",
+        "//cmd/webserver/svclist:go_default_library",
         "@com_github_coreos_etcd//client:go_default_library",
         "@com_github_golang_glog//:go_default_library",
         "@com_github_prometheus_client_golang//prometheus:go_default_library",
