@@ -8,12 +8,12 @@ go_binary(
         "main.go",
     ],
     deps = [
-        "//letsgo:go_default_library",
-        "//letsgo/strings:go_default_library",
-        "//skylb-api/util:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/golang/glog:go_default_library",
-        "//third-party-go/vendor/golang.org/x/net/context:go_default_library",
+        "@com_github_binchencoder_letsgo//:go_default_library",
+        "@com_github_binchencoder_letsgo//strings:go_default_library",
+        "@com_github_binchencoder_skylb_api//util:go_default_library",
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_golang_glog//:go_default_library",
+        "@org_golang_x_net//context:go_default_library",
     ],
 )
 
@@ -26,12 +26,12 @@ go_test(
         "main_test.go",
     ]),
     deps = [
-        "//letsgo:go_default_library",
-        "//letsgo/strings:go_default_library",
-        "//skylb-api/util:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/golang/glog:go_default_library",
-        "//third-party-go/vendor/golang.org/x/net/context:go_default_library",
+        "@com_github_binchencoder_letsgo//:go_default_library",
+        "@com_github_binchencoder_letsgo//strings:go_default_library",
+        "@com_github_binchencoder_skylb_api//util:go_default_library",
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_golang_glog//:go_default_library",
+        "@org_golang_x_net//context:go_default_library",
     ],
 )
 

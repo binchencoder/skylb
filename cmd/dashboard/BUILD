@@ -6,10 +6,10 @@ go_binary(
     name = "skylb-dashboard",
     srcs = ["main.go"],
     deps = [
-        "//letsgo:go_default_library",
-        "//skylb/dashboard:go_default_library",
-        "//skylb/dashboard/db:go_default_library",
-        "//third-party-go/vendor/github.com/kataras/iris:go_default_library",
+        "@com_github_binchencoder_letsgo//:go_default_library",
+        "/dashboard:go_default_library",
+        "/dashboard/db:go_default_library",
+        "@com_github_kataras_iris//:go_default_library",
     ],
 )
 
@@ -20,9 +20,9 @@ go_binary(
         "etcdloader.go",
     ],
     deps = [
-        "//letsgo/strings:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/golang/glog:go_default_library",
+        "@com_github_binchencoder_letsgo//strings:go_default_library",
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_golang_glog//:go_default_library",
     ],
 )
 
@@ -80,10 +80,10 @@ pkg_tar(
     deps = [
         ":shell-scripts",
         ":skylb-dashboard-tar",
-        "//skylb/dashboard/scripts/skylb",
-        "//skylb/dashboard/static",
-        "//skylb/dashboard/styles",
-        "//skylb/docs/dashboard",
+        "/dashboard/scripts/skylb",
+        "/dashboard/static",
+        "/dashboard/styles",
+        "/docs/dashboard",
     ],
 )
 

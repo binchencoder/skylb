@@ -1,4 +1,4 @@
-package(default_visibility = ["//skylb:__subpackages__"])
+package(default_visibility = ["//:__subpackages__"])
 
 load("//bld_tools/bazel/rules_jingoal/protobuf:def.bzl", "genproto_go", "genproto_js")
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_library")
@@ -37,8 +37,8 @@ go_library(
     srcs = [":proto_gosrc"],
     importpath = "github.com/binchencoder/skylb/dashboard/proto",
     deps = [
-        "//third-party-go/vendor/github.com/golang/protobuf/proto:go_default_library",
-        "//third-party-go/vendor/golang.org/x/net/context:go_default_library",
-        "//third-party-go/vendor/google.golang.org/grpc:go_default_library",
+        "@com_github_golang_protobuf//proto:go_default_library",
+        "@org_golang_x_net//context:go_default_library",
+        "@org_golang_google_grpc//:go_default_library",
     ],
 )

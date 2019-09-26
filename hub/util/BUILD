@@ -19,5 +19,5 @@ go_test(
     embed = [
         ":go_default_library",
     ],
-    deps = ["//third-party-go/vendor/github.com/smartystreets/goconvey/convey:go_default_library"],
+    deps = ["@com_github_smartystreets_goconvey//convey:go_default_library"],
 )

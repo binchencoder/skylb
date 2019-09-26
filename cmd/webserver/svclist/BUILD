@@ -1,4 +1,4 @@
-package(default_visibility = ["//skylb:__subpackages__"])
+package(default_visibility = ["//:__subpackages__"])
 
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
@@ -10,13 +10,13 @@ go_library(
     ),
     importpath = "github.com/binchencoder/skylb/cmd/webserver/svclist",
     deps = [
-        "//skylb-api/prefix:go_default_library",
-        "//skylb-api/proto:go_default_library",
-        "//skylb/hub:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/golang/glog:go_default_library",
-        "//third-party-go/vendor/golang.org/x/net/context:go_default_library",
-        "//third-party-go/vendor/k8s.io/api/core/v1:go_default_library",
+        "//hub:go_default_library",
+        "@com_github_binchencoder_skylb_api//prefix:go_default_library",
+        "@com_github_binchencoder_skylb_api//proto:go_default_library",        
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_golang_glog//:go_default_library",
+        "@org_golang_x_net//context:go_default_library",
+        "@io_k8s_api//core/v1:go_default_library",
     ],
 )
 
@@ -30,7 +30,7 @@ go_test(
     ],
     tags = ["requires-network"],
     deps = [
-        "//skylb-api/proto:go_default_library",
-        "//skylb/hub:go_default_library",
+        "//hub:go_default_library",
+        "@com_github_binchencoder_skylb_api//proto:go_default_library",
     ],
 )

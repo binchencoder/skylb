@@ -10,9 +10,9 @@ go_binary(
         "sort.go",
     ],
     deps = [
-        "//letsgo:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/peterh/liner:go_default_library",
-        "//third-party-go/vendor/k8s.io/api/core/v1:go_default_library",
+        "@com_github_binchencoder_letsgo//:go_default_library",
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_peterh_liner//:go_default_library",
+        "@com_github_kubernetes_api//core/v1:go_default_library",
     ],
 )

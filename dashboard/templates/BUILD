@@ -1,4 +1,4 @@
-package(default_visibility = ["//skylb:__subpackages__"])
+package(default_visibility = ["//:__subpackages__"])
 
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
@@ -14,8 +14,8 @@ go_library(
     srcs = [":dashboard_html_gosrc"],
     importpath = "github.com/binchencoder/skylb/dashboard/templates/dashboard_html",
     deps = [
-        "//skylb/dashboard/proto:go_default_library",
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/runtime:go_default_library",
+        "/dashboard/proto:go_default_library",
+        "@com_github_linuxerwang_goats_html//runtime:go_default_library",
     ],
 )
 
@@ -31,8 +31,8 @@ closure_js_library(
         ":home_html_jssrc",
     ],
     deps = [
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime",
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime/filters",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime/filters",
         "@io_bazel_rules_closure//closure/library",
     ],
 )
@@ -47,7 +47,7 @@ go_library(
     srcs = [":loginbox_html_gosrc"],
     importpath = "github.com/binchencoder/skylb/dashboard/templates/loginbox_html",
     deps = [
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/runtime:go_default_library",
+        "@com_github_linuxerwang_goats_html//runtime:go_default_library",
     ],
 )
 
@@ -65,7 +65,7 @@ go_library(
     importpath = "github.com/binchencoder/skylb/dashboard/templates/login_html",
     deps = [
         ":loginbox_html",
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/runtime:go_default_library",
+        "@com_github_linuxerwang_goats_html//runtime:go_default_library",
     ],
 )
 
@@ -81,8 +81,8 @@ closure_js_library(
         ":loginbox_html_jssrc",
     ],
     deps = [
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime",
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime/filters",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime/filters",
         "@io_bazel_rules_closure//closure/library",
     ],
 )
@@ -99,8 +99,8 @@ closure_js_library(
         ":logs_html_jssrc",
     ],
     deps = [
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime",
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime/filters",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime/filters",
         "@io_bazel_rules_closure//closure/library",
     ],
 )
@@ -117,8 +117,8 @@ closure_js_library(
         ":usermgr_html_jssrc",
     ],
     deps = [
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime",
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime/filters",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime/filters",
         "@io_bazel_rules_closure//closure/library",
     ],
 )
@@ -135,8 +135,8 @@ closure_js_library(
         ":service_html_jssrc",
     ],
     deps = [
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime",
-        "//third-party-go/vendor/github.com/linuxerwang/goats-html/client/goats/runtime/filters",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime",
+        "@com_github_linuxerwang_goats_html//client/goats/runtime/filters",
         "@io_bazel_rules_closure//closure/library",
     ],
 )

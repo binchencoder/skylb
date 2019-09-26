@@ -1,4 +1,4 @@
-package(default_visibility = ["//skylb:__subpackages__"])
+package(default_visibility = ["//:__subpackages__"])
 
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 

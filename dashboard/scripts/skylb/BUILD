@@ -1,4 +1,4 @@
-package(default_visibility = ["//skylb:__subpackages__"])
+package(default_visibility = ["//:__subpackages__"])
 
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_binary", "closure_js_library")
@@ -21,12 +21,12 @@ closure_js_library(
         "superfluousSuppress",
     ],
     deps = [
-        "//skylb/dashboard/proto:proto_js",
-        "//skylb/dashboard/templates:home_html_js",
-        "//skylb/dashboard/templates:loginbox_html_js",
-        "//skylb/dashboard/templates:logs_html_js",
-        "//skylb/dashboard/templates:service_html_js",
-        "//skylb/dashboard/templates:usermgr_html_js",
+        "/dashboard/proto:proto_js",
+        "/dashboard/templates:home_html_js",
+        "/dashboard/templates:loginbox_html_js",
+        "/dashboard/templates:logs_html_js",
+        "/dashboard/templates:service_html_js",
+        "/dashboard/templates:usermgr_html_js",
         "@io_bazel_rules_closure//closure/library",
         "@io_bazel_rules_closure//closure/library/ui:all_js",
     ],

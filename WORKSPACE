@@ -1,115 +1,122 @@
-workspace(name = "binchencoder_skylb")
+workspace(name = "com_github_binchencoder_skylb")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
+# ----------从github下载扩展 io_bazel_rules_go ----------
 http_archive(
     name = "io_bazel_rules_go",
-    sha256 = "6776d68ebb897625dead17ae510eac3d5f6342367327875210df44dbe2aeeb19",
-    urls = ["https://github.com/bazelbuild/rules_go/releases/download/0.17.1/rules_go-0.17.1.tar.gz"],
+    sha256 = "8df59f11fb697743cbb3f26cfb8750395f30471e9eabde0d174c3aebc7a1cd39",
+    urls = [
+        "https://github.com/bazelbuild/rules_go/releases/download/0.19.1/rules_go-0.19.1.tar.gz",
+    ],
 )
+# 从下载的扩展里载入 go_rules_dependencies go_register_toolchains 函数
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-go_rules_dependencies()
-go_register_toolchains()
 
+# ---------- bazel_gazelle ----------
+# 一般来说都会使用gazelle工具来自动生成 BUILD 文件, 而不是手写.
 http_archive(
     name = "bazel_gazelle",
-    sha256 = "3c681998538231a2d24d0c07ed5a7658cb72bfb5fd4bf9911157c0e9ac6a2687",
-    urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/0.17.0/bazel-gazelle-0.17.0.tar.gz"],
+    sha256 = "be9296bfd64882e3c08e3283c58fcb461fa6dd3c171764fcc4cf322f60615a9b",
+    urls = [
+        "https://github.com/bazelbuild/bazel-gazelle/releases/download/0.18.1/bazel-gazelle-0.18.1.tar.gz",
+    ],
 )
+# 从gazelle中加载gazelle_dependencies
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies", "go_repository")
+
+# Overriding dependencies go_rules_dependencies
+http_archive(
+    name = "go_googleapis",
+    urls = [
+        "https://codeload.github.com/googleapis/googleapis/tar.gz/b4c73face84fefb967ef6c72f0eae64faf67895f"
+    ],
+    strip_prefix = "googleapis-b4c73face84fefb967ef6c72f0eae64faf67895f",
+    type = "tar.gz",
+    patches = [
+        "@io_bazel_rules_go//third_party:go_googleapis-deletebuild.patch",
+        "@io_bazel_rules_go//third_party:go_googleapis-directives.patch",
+        "@io_bazel_rules_go//third_party:go_googleapis-gazelle.patch",
+        "@io_bazel_rules_go//third_party:go_googleapis-fix.patch",
+    ],
+    patch_args = ["-E", "-p1"],
+    # gazelle args: -go_prefix google.golang.org/genproto/googleapi -proto disable
+)
+go_repository(
+    name = "org_golang_x_net",
+    importpath = "golang.org/x/net",
+    urls = [
+        "https://codeload.github.com/golang/net/tar.gz/16b79f2e4e95ea23b2bf9903c9809ff7b013ce85", # master, as of 2019-03-3
+    ],
+    strip_prefix = "net-16b79f2e4e95ea23b2bf9903c9809ff7b013ce85",
+    type = "tar.gz",
+    # gazelle args: -go_prefix golang.org/x/net -proto disable
+)
+go_repository(
+    name = "org_golang_x_sys",
+    importpath = "golang.org/x/sys",
+    urls = [
+        "https://codeload.github.com/golang/sys/tar.gz/fde4db37ae7ad8191b03d30d27f258b5291ae4e3",
+    ],
+    strip_prefix = "sys-fde4db37ae7ad8191b03d30d27f258b5291ae4e3",
+    type = "tar.gz",
+    # gazelle args: -go_prefix golang.org/x/sys
+)
+go_repository(
+    name = "org_golang_x_text",
+    importpath = "golang.org/x/text",
+    urls = [
+        "https://codeload.github.com/golang/text/tar.gz/f21a4dfb5e38f5895301dc265a8def02365cc3d0", # v0.3.0, latest as of 2019-03-03
+    ],
+    strip_prefix = "text-f21a4dfb5e38f5895301dc265a8def02365cc3d0",
+    type = "tar.gz",
+    # gazelle args: -go_prefix golang.org/x/text -proto disable
+)
+go_repository(
+    name = "org_golang_x_tools",
+    importpath = "golang.org/x/tools",
+    urls = [
+        "https://codeload.github.com/golang/tools/tar.gz/c8855242db9c1762032abe33c2dff50de3ec9d05",
+    ],
+    strip_prefix = "tools-c8855242db9c1762032abe33c2dff50de3ec9d05",
+    type = "tar.gz",
+    patches = [
+        "@io_bazel_rules_go//third_party:org_golang_x_tools-extras.patch",
+    ],
+    patch_args = ["-p1"],
+    # gazelle args: -go_prefix golang.org/x/tools -proto disable
+)
+
+# 注册一堆常用依赖 如github.com/google/protobuf golang.org/x/net
+go_rules_dependencies()
+# 下载golang工具链
+go_register_toolchains()
+# 加载gazelle依赖
 gazelle_dependencies()
 
-go_repository(
-    name = "com_github_bazelbuild_buildtools",
-    importpath = "github.com/bazelbuild/buildtools",
-    commit = "36bd730dfa67bff4998fe897ee4bbb529cc9fbee",
-)
-load("@com_github_bazelbuild_buildtools//buildifier:deps.bzl", "buildifier_dependencies")
-buildifier_dependencies()
+# Use gazelle to declare Go dependencies in Bazel.
+# gazelle:repository_macro repositories.bzl%go_repositories
+load("//:repositories.bzl", "go_repositories")
+go_repositories()
 
-git_repository(
+go_repository(
     name = "com_google_protobuf",
-    commit = "09745575a923640154bcf307fba8aedff47f240a",
-    remote = "https://github.com/protocolbuffers/protobuf",
-    shallow_since = "1558721209 -0700",
+    importpath = "github.com/protocolbuffers/protobuf",
+    urls = [
+        "https://codeload.github.com/protocolbuffers/protobuf/tar.gz/09745575a923640154bcf307fba8aedff47f240a",
+    ],
+    strip_prefix = "protobuf-09745575a923640154bcf307fba8aedff47f240a",
+    type = "tar.gz",
 )
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
-go_repository(
-    name = "io_bazel_rules_closure",
-    importpath = "github.com/bazelbuild/rules_closure",
-    commit = "b2a6fb762a2a655d9970d88a9218b7a1cf098ffa",
+# ---------- com_github_bazelbuild_buildtools ----------
+http_archive(
+    name = "com_github_bazelbuild_buildtools",
+    sha256 = "86592d703ecbe0c5cbb5139333a63268cf58d7efd2c459c8be8e69e77d135e29",
+    strip_prefix = "buildtools-0.26.0",
+    urls = ["https://github.com/bazelbuild/buildtools/archive/0.26.0.tar.gz"],
 )
-
-go_repository(
-    name = "binchencoder_third_party_java",
-    commit = "dcac035f578caefefc6cd12a799cbb400a09f004",
-    importpath = "github.com/binchencoder/third-party-java",
-)
-
-go_repository(
-    name = "grpc_ecosystem_grpc_gateway",
-    commit = "ad529a448ba494a88058f9e5be0988713174ac86",
-    importpath = "github.com/grpc-ecosystem/grpc-gateway",
-)
-
-go_repository(
-    name = "com_github_fatih_color",
-    commit = "3f9d52f7176a6927daacff70a3e8d1dc2025c53e",
-    importpath = "github.com/fatih/color",
-)
-
-go_repository(
-    name = "com_github_klauspost_compress",
-    commit = "ae52aff18558bd92cbe681549bfe9e8cbffd5903",
-    importpath = "github.com/klauspost/compress",
-)
-
-go_repository(
-    name = "com_github_klauspost_cpuid",
-    commit = "05a8198c0f5a27739aec358908d7e12c64ce6eb7",
-    importpath = "github.com/klauspost/cpuid",
-)
-
-go_repository(
-    name = "com_github_golang_net",
-    commit = "4829fb13d2c62012c17688fa7f629f371014946d",
-    importpath = "github.com/golang/net",
-)
-
-# Also define in Gopkg.toml
-go_repository(
-    name = "org_golang_google_genproto",
-    commit = "383e8b2c3b9e36c4076b235b32537292176bae20",
-    importpath = "google.golang.org/genproto",
-)
-
-# Also define in Gopkg.toml
-go_repository(
-    name = "com_github_rogpeppe_fastuuid",
-    commit = "6724a57986aff9bff1a1770e9347036def7c89f6",
-    importpath = "github.com/rogpeppe/fastuuid",
-)
-
-# Also define in Gopkg.toml
-go_repository(
-    name = "in_gopkg_resty_v1",
-    commit = "fa5875c0caa5c260ab78acec5a244215a730247f",
-    importpath = "gopkg.in/resty.v1",
-)
-
-# Also define in Gopkg.toml
-go_repository(
-    name = "com_github_ghodss_yaml",
-    commit = "0ca9ea5df5451ffdf184b4428c902747c2c11cd7",
-    importpath = "github.com/ghodss/yaml",
-)
-
-# Also define in Gopkg.toml
-go_repository(
-    name = "in_gopkg_yaml_v2",
-    commit = "eb3733d160e74a9c7e442f435eb3bea458e1d19f",
-    importpath = "gopkg.in/yaml.v2",
-)
+load("@com_github_bazelbuild_buildtools//buildifier:deps.bzl", "buildifier_dependencies")
+buildifier_dependencies()

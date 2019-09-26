@@ -15,23 +15,23 @@ go_library(
     ],
     importpath = "github.com/binchencoder/skylb/hub",
     deps = [
-        "//letsgo/strings:go_default_library",
-        "//letsgo/sync:go_default_library",
-        "//skylb-api/lameduck:go_default_library",
-        "//skylb-api/prefix:go_default_library",
-        "//skylb-api/proto:go_default_library",
-        "//skylb-api/util:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/golang/glog:go_default_library",
-        "//third-party-go/vendor/github.com/prometheus/client_golang/prometheus:go_default_library",
-        "//third-party-go/vendor/golang.org/x/net/context:go_default_library",
-        "//third-party-go/vendor/k8s.io/api/core/v1:go_default_library",
-        "//third-party-go/vendor/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library",
-        "//third-party-go/vendor/k8s.io/apimachinery/pkg/fields:go_default_library",
-        "//third-party-go/vendor/k8s.io/client-go/kubernetes:go_default_library",
-        "//third-party-go/vendor/k8s.io/client-go/kubernetes/typed/core/v1:go_default_library",
-        "//third-party-go/vendor/k8s.io/client-go/rest:go_default_library",
-        "//third-party-go/vendor/k8s.io/client-go/tools/cache:go_default_library",
+        "@com_github_binchencoder_letsgo//strings:go_default_library",
+        "@com_github_binchencoder_letsgo//sync:go_default_library",
+        "@com_github_binchencoder_skylb_api//lameduck:go_default_library",
+        "@com_github_binchencoder_skylb_api//prefix:go_default_library",
+        "@com_github_binchencoder_skylb_api//proto:go_default_library",
+        "@com_github_binchencoder_skylb_api//util:go_default_library",
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_golang_glog//:go_default_library",
+        "@com_github_prometheus_client_golang//prometheus:go_default_library",
+        "@org_golang_x_net//context:go_default_library",
+        "@io_k8s_api//core/v1:go_default_library",
+        "@k8s.io/apimachinery//pkg/apis/meta/v1:go_default_library",
+        "@k8s.io/apimachinery//pkg/fields:go_default_library",
+        "@io_k8s_client_go//kubernetes:go_default_library",
+        "@io_k8s_client_go//kubernetes/typed/core/v1:go_default_library",
+        "@io_k8s_client_go//rest:go_default_library",
+        "@io_k8s_client_go//tools/cache:go_default_library",
     ],
 )
 
@@ -50,12 +50,12 @@ go_test(
         ":go_default_library",
     ],
     deps = [
-        "//letsgo/testing/mocks/etcd:go_default_library",
-        "//skylb-api/proto:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/golang/glog:go_default_library",
-        "//third-party-go/vendor/github.com/smartystreets/goconvey/convey:go_default_library",
-        "//third-party-go/vendor/k8s.io/api/core/v1:go_default_library",
+        "@com_github_binchencoder_letsgo//testing/mocks/etcd:go_default_library",
+        "@com_github_binchencoder_skylb_api//proto:go_default_library",
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_golang_glog//:go_default_library",
+        "@com_github_smartystreets_goconvey//convey:go_default_library",
+        "@io_k8s_api//core/v1:go_default_library",
     ],
 )
 
@@ -69,7 +69,7 @@ go_test(
     embed = [
         ":go_default_library",
     ],
-    deps = ["//third-party-go/vendor/github.com/golang/glog:go_default_library"],
+    deps = ["@com_github_golang_glog//:go_default_library"],
 )
 
 go_test(
@@ -85,9 +85,9 @@ go_test(
     ],
     tags = ["requires-network"],
     deps = [
-        "//skylb-api/proto:go_default_library",
-        "//third-party-go/vendor/github.com/coreos/etcd/client:go_default_library",
-        "//third-party-go/vendor/github.com/golang/glog:go_default_library",
-        "//third-party-go/vendor/golang.org/x/net/context:go_default_library",
+        "@com_github_binchencoder_skylb_api//proto:go_default_library",
+        "@com_github_coreos_etcd//client:go_default_library",
+        "@com_github_golang_glog//:go_default_library",
+        "@org_golang_x_net//context:go_default_library",
     ],
 )
