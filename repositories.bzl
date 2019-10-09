@@ -114,6 +114,11 @@ def go_repositories():
         type = "tar.gz",
     )
     go_repository(
+        name = "com_github_hashicorp_golang_lru",
+        importpath = "github.com/hashicorp/golang-lru",
+        commit = "7f827b33c0f158ec5dfbba01bb0b14a4541fd81d",
+    )
+    go_repository(
         name = "com_github_json_iterator_go",
         importpath = "github.com/json-iterator/go",
         commit = "819acad769e54806c920726ac93537ba4e2c22ad",
