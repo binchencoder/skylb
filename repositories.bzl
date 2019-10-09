@@ -1,5 +1,7 @@
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 
+# gazelle:proto disable_global
+
 def go_repositories():
     go_repository(
         name = "com_github_binchencoder_letsgo",
@@ -60,6 +62,11 @@ def go_repositories():
         commit = "e214231b295a8ea9479f11b70b35d5acf3556d9b",
     )
     go_repository(
+        name = "com_github_davecgh_go_spew",
+        importpath = "github.com/davecgh/go-spew",
+        commit = "d8f796af33cc11cb798c1aaeb27a4ebc5099927d",
+    )
+    go_repository(
         name = "com_github_golang_glog",
         importpath = "github.com/golang/glog",
         sum = "h1:VKtxabqXZkF25pY9ekfRL6a582T4P37/31XEstQ5p58=",
@@ -70,6 +77,25 @@ def go_repositories():
         importpath = "github.com/google/uuid",
         commit = "c2e93f3ae59f2904160ceaab466009f965df46d6",
         # gazelle args: -go_prefix github.com/google/uuid
+    )
+    go_repository(
+        name = "com_github_google_gofuzz",
+        importpath = "github.com/google/gofuzz",
+        commit = "b906efc57a556621b61db18d73df8c109dfa3613",
+    )
+    go_repository(
+        name = "com_github_google_go_cmp",
+        importpath = "github.com/google/go-cmp",
+        commit = "b1c9c4891a6525d98001fea424c8926c6d77bb56",
+    )
+    go_repository(
+        name = "com_github_googleapis_gnostic",
+        importpath = "github.com/googleapis/gnostic",
+        urls = [
+            "https://codeload.github.com/googleapis/gnostic/tar.gz/b0a17e38ce1aad0c792ef9efd1810364be151db4",
+        ],
+        strip_prefix = "gnostic-b0a17e38ce1aad0c792ef9efd1810364be151db4",
+        type = "tar.gz",
     )
     go_repository(
         name = "com_github_gogo_protobuf",
@@ -86,6 +112,11 @@ def go_repositories():
         urls = ["https://codeload.github.com/go-kit/kit/tar.gz/dc489b75b9cdbf29c739534c2aa777cabb034954"],
         strip_prefix = "kit-dc489b75b9cdbf29c739534c2aa777cabb034954",
         type = "tar.gz",
+    )
+    go_repository(
+        name = "com_github_json_iterator_go",
+        importpath = "github.com/json-iterator/go",
+        commit = "819acad769e54806c920726ac93537ba4e2c22ad",
     )
     go_repository(
         name = "com_github_jtolds_gls",
@@ -114,6 +145,11 @@ def go_repositories():
         name = "com_github_matttproud_golang_protobuf_extensions",
         importpath = "github.com/matttproud/golang_protobuf_extensions",
         commit = "c182affec369e30f25d3eb8cd8a478dee585ae7d",
+    )
+    go_repository(
+        name = "com_github_modern_go_reflect2",
+        importpath = "github.com/modern-go/reflect2",
+        commit = "94122c33edd36123c84d5368cfb2b69df93a0ec8",
     )
     go_repository(
         name = "com_github_opentracing_opentracing_go",
@@ -269,29 +305,45 @@ def go_repositories():
         # gazelle args: -go-prefix gopkg.in/yaml.v2
     )
     go_repository(
+        name = "in_gopkg_inf_v0",
+        importpath = "gopkg.in/inf.v0",
+        urls = [
+            "https://codeload.github.com/go-inf/inf/tar.gz/8237a9a5367b2a82f922b38d4b3676293e031763",
+        ],
+        strip_prefix = "inf-8237a9a5367b2a82f922b38d4b3676293e031763",
+        type = "tar.gz",
+    )
+    go_repository(
         name = "io_k8s_apimachinery",
-        importpath = "github.com/kubernetes/apimachinery",
+        importpath = "k8s.io/apimachinery",
         urls = ["https://codeload.github.com/kubernetes/apimachinery/tar.gz/62598f38f24eabad89ddd52347282202797a6de9"],
         strip_prefix = "apimachinery-62598f38f24eabad89ddd52347282202797a6de9",
         type = "tar.gz",
-        # gazelle args: -go_prefix k8s.io/apimachinery -proto disable
+        build_file_proto_mode = "disable",
     )
     go_repository(
         name = "io_k8s_client_go",
-        importpath = "github.com/kubernetes/client-go",
+        importpath = "k8s.io/client-go",
         urls = ["https://codeload.github.com/kubernetes/client-go/tar.gz/07054768d98de723f5da7fb60647eda1c0471a76"],
         strip_prefix = "client-go-07054768d98de723f5da7fb60647eda1c0471a76",
         type = "tar.gz",
-        # gazelle args: -go_prefix k8s.io/client-go -proto disable
     )
     go_repository(
         name = "io_k8s_api",
-        importpath = "github.com/kubernetes/api",
+        importpath = "k8s.io/api",
         urls = ["https://codeload.github.com/kubernetes/api/tar.gz/d58b53da08f5430bb0f4e1154a73314e82b5b3aa"],
         strip_prefix = "api-d58b53da08f5430bb0f4e1154a73314e82b5b3aa",
         type = "tar.gz",
-        # gazelle args: -go_prefix k8s.io/api -proto disable
+        build_file_proto_mode = "disable",
     )
+    # go_repository(
+    #     name = "io_k8s_klog",
+    #     importpath = "k8s.io/klog",
+    #     urls = ["https://codeload.github.com/kubernetes/klog/tar.gz/ab80cd2723c29ccc40ab8b81ba5e1f947b08bf74"],
+    #     strip_prefix = "klog-ab80cd2723c29ccc40ab8b81ba5e1f947b08bf74",
+    #     type = "tar.gz",
+    #     build_file_proto_mode = "disable",
+    # )
     go_repository(
         name = "io_upper_db_v3",
         importpath = "upper.io/db.v3",
