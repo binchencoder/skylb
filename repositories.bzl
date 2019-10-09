@@ -269,20 +269,12 @@ def go_repositories():
         # gazelle args: -go-prefix gopkg.in/yaml.v2
     )
     go_repository(
-        name = "io_k8s_api",
-        importpath = "github.com/kubernetes/api",
-        urls = ["https://codeload.github.com/kubernetes/api/tar.gz/d58b53da08f5430bb0f4e1154a73314e82b5b3aa"],
-        strip_prefix = "api-d58b53da08f5430bb0f4e1154a73314e82b5b3aa",
-        type = "tar.gz",
-        # gazelle args: -go_prefix k8s.io/api
-    )
-    go_repository(
         name = "io_k8s_apimachinery",
         importpath = "github.com/kubernetes/apimachinery",
         urls = ["https://codeload.github.com/kubernetes/apimachinery/tar.gz/62598f38f24eabad89ddd52347282202797a6de9"],
         strip_prefix = "apimachinery-62598f38f24eabad89ddd52347282202797a6de9",
         type = "tar.gz",
-        # gazelle args: -go_prefix k8s.io/apimachinery
+        # gazelle args: -go_prefix k8s.io/apimachinery -proto disable
     )
     go_repository(
         name = "io_k8s_client_go",
@@ -290,7 +282,15 @@ def go_repositories():
         urls = ["https://codeload.github.com/kubernetes/client-go/tar.gz/07054768d98de723f5da7fb60647eda1c0471a76"],
         strip_prefix = "client-go-07054768d98de723f5da7fb60647eda1c0471a76",
         type = "tar.gz",
-        # gazelle args: -go_prefix k8s.io/client-go
+        # gazelle args: -go_prefix k8s.io/client-go -proto disable
+    )
+    go_repository(
+        name = "io_k8s_api",
+        importpath = "github.com/kubernetes/api",
+        urls = ["https://codeload.github.com/kubernetes/api/tar.gz/d58b53da08f5430bb0f4e1154a73314e82b5b3aa"],
+        strip_prefix = "api-d58b53da08f5430bb0f4e1154a73314e82b5b3aa",
+        type = "tar.gz",
+        # gazelle args: -go_prefix k8s.io/api -proto disable
     )
     go_repository(
         name = "io_upper_db_v3",
