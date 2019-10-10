@@ -8,7 +8,7 @@ go_library(
         ["*.go"],
         exclude = ["*_test.go"],
     ),
-    importpath = "github.com/binchencoder/skylb/rpc",
+    importpath = "binchencoder.com/skylb/rpc",
     deps = [
         "//hub:go_default_library",
         "@com_github_binchencoder_skylb_api//lameduck:go_default_library",

@@ -14,8 +14,8 @@ import (
 	"google.golang.org/grpc"
 	hpb "google.golang.org/grpc/health/grpc_health_v1"
 
-	"github.com/binchencoder/letsgo"
-	jt "github.com/binchencoder/letsgo/time"
+	"binchencoder.com/letsgo"
+	jt "binchencoder.com/letsgo/time"
 )
 
 var (

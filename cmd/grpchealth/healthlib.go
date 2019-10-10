@@ -12,12 +12,12 @@ import (
 	"google.golang.org/grpc"
 	hpb "google.golang.org/grpc/health/grpc_health_v1"
 
-	"github.com/binchencoder/letsgo/service/naming"
-	skylbclient "github.com/binchencoder/skylb-api/client"
-	jh "github.com/binchencoder/skylb-api/internal/health" // TODO(fuyc): may refactor the package.
-	skypb "github.com/binchencoder/skylb-api/proto"
-	"github.com/binchencoder/skylb/cmd/webserver/svclist"
-	vexpb "github.com/binchencoder/ease-gateway/proto/data"
+	"binchencoder.com/letsgo/service/naming"
+	skylbclient "binchencoder.com/skylb-api/client"
+	jh "binchencoder.com/skylb-api/internal/health" // TODO(fuyc): may refactor the package.
+	skypb "binchencoder.com/skylb-api/proto"
+	"binchencoder.com/skylb/cmd/webserver/svclist"
+	vexpb "binchencoder.com/ease-gateway/proto/data"
 )
 
 const (

@@ -10,7 +10,7 @@ go_library(
         "observer.go",
         "service.go",
     ],
-    importpath = "github.com/binchencoder/skylb/hub/model",
+    importpath = "binchencoder.com/skylb/hub/model",
     deps = [
         "//hub/util:go_default_library",
         "@com_github_binchencoder_skylb_api//proto:go_default_library",

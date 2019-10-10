@@ -10,10 +10,10 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/kataras/iris"
 
-	"github.com/binchencoder/skylb-api/lameduck"
-	pb "github.com/binchencoder/skylb/dashboard/proto"
-	"github.com/binchencoder/skylb/dashboard/util"
-	vex "github.com/binchencoder/ease-gateway/proto/data"
+	"binchencoder.com/skylb-api/lameduck"
+	pb "binchencoder.com/skylb/dashboard/proto"
+	"binchencoder.com/skylb/dashboard/util"
+	vex "binchencoder.com/ease-gateway/proto/data"
 )
 
 func getAllServicesHandler(ctx *iris.Context) {

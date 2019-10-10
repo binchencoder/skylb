@@ -5,7 +5,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 go_library(
     name = "go_default_library",
     srcs = glob(["*.go"]),
-    importpath = "github.com/binchencoder/skylb/dashboard",
+    importpath = "binchencoder.com/skylb/dashboard",
     deps = [
         "@com_github_binchencoder_letsgo//service/naming:go_default_library",
         "@com_github_binchencoder_letsgo//strings:go_default_library",

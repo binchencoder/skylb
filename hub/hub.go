@@ -16,12 +16,12 @@ import (
 	"golang.org/x/net/context"
 	api "k8s.io/api/core/v1"
 
-	"github.com/binchencoder/letsgo/strings"
-	jsync "github.com/binchencoder/letsgo/sync"
-	"github.com/binchencoder/skylb-api/lameduck"
-	"github.com/binchencoder/skylb-api/prefix"
-	pb "github.com/binchencoder/skylb-api/proto"
-	"github.com/binchencoder/skylb-api/util"
+	"binchencoder.com/letsgo/strings"
+	jsync "binchencoder.com/letsgo/sync"
+	"binchencoder.com/skylb-api/lameduck"
+	"binchencoder.com/skylb-api/prefix"
+	pb "binchencoder.com/skylb-api/proto"
+	"binchencoder.com/skylb-api/util"
 )
 
 const (

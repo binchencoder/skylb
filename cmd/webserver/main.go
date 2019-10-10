@@ -24,14 +24,14 @@ import (
 	"github.com/golang/glog"
 	prom "github.com/prometheus/client_golang/prometheus"
 
-	"github.com/binchencoder/letsgo"
-	"github.com/binchencoder/letsgo/metrics"
-	js "github.com/binchencoder/letsgo/strings"
-	"github.com/binchencoder/skylb-api/lameduck"
-	"github.com/binchencoder/skylb-api/prefix"
-	"github.com/binchencoder/skylb/cmd/grpchealth"
-	"github.com/binchencoder/skylb/cmd/webserver/svclist"
-	"github.com/binchencoder/skylb/hub"
+	"binchencoder.com/letsgo"
+	"binchencoder.com/letsgo/metrics"
+	js "binchencoder.com/letsgo/strings"
+	"binchencoder.com/skylb-api/lameduck"
+	"binchencoder.com/skylb-api/prefix"
+	"binchencoder.com/skylb/cmd/grpchealth"
+	"binchencoder.com/skylb/cmd/webserver/svclist"
+	"binchencoder.com/skylb/hub"
 )
 
 const (

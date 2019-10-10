@@ -3,7 +3,7 @@ package util
 import (
 	"strings"
 
-	vex "github.com/binchencoder/ease-gateway/proto/data"
+	vex "binchencoder.com/ease-gateway/proto/data"
 )
 
 var (

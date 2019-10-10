@@ -10,7 +10,7 @@ import (
 	prom "github.com/prometheus/client_golang/prometheus"
 	api "k8s.io/api/core/v1"
 
-	pb "github.com/binchencoder/skylb-api/proto"
+	pb "binchencoder.com/skylb-api/proto"
 )
 
 const (

@@ -5,7 +5,7 @@ import (
 	"github.com/golang/glog"
 	"golang.org/x/net/context"
 
-	"github.com/binchencoder/skylb-api/util"
+	"binchencoder.com/skylb-api/util"
 )
 
 const (

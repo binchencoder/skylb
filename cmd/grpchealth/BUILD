@@ -7,7 +7,7 @@ go_library(
     srcs = glob(
         ["healthlib.go"],
     ),
-    importpath = "github.com/binchencoder/skylb/cmd/grpchealth",
+    importpath = "binchencoder.com/skylb/cmd/grpchealth",
     deps = [
         "@com_github_binchencoder_letsgo//service/naming:go_default_library",
         "@com_github_binchencoder_skylb_api//client:go_default_library",

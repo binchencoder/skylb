@@ -3,7 +3,7 @@ package model
 import (
 	"github.com/stretchr/testify/mock"
 
-	pb "github.com/binchencoder/skylb-api/proto"
+	pb "binchencoder.com/skylb-api/proto"
 )
 
 // ClientObserverMock mocks ClientObserver.

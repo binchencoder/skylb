@@ -10,7 +10,7 @@ import (
 	"github.com/golang/glog"
 	"golang.org/x/net/context"
 
-	"github.com/binchencoder/skylb-api/prefix"
+	"binchencoder.com/skylb-api/prefix"
 )
 
 const (

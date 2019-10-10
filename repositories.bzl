@@ -1,7 +1,5 @@
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 
-# gazelle:proto disable_global
-
 def go_repositories():
     go_repository(
         name = "com_github_binchencoder_letsgo",
@@ -107,6 +105,11 @@ def go_repositories():
         type = "tar.gz",
     )
     go_repository(
+        name = "com_github_go_logr_logr",
+        importpath = "github.com/go-logr/logr",
+        commit = "a1ebd699b1950beb1da0752cbb5559662018f798",
+    )
+    go_repository(
         name = "com_github_go_kit_kit",
         importpath = "github.com/go-kit/kit",
         urls = ["https://codeload.github.com/go-kit/kit/tar.gz/dc489b75b9cdbf29c739534c2aa777cabb034954"],
@@ -155,6 +158,11 @@ def go_repositories():
         name = "com_github_modern_go_reflect2",
         importpath = "github.com/modern-go/reflect2",
         commit = "94122c33edd36123c84d5368cfb2b69df93a0ec8",
+    )
+    go_repository(
+        name = "com_github_modern_go_concurrent",
+        importpath = "github.com/modern-go/concurrent",
+        commit = "bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94",
     )
     go_repository(
         name = "com_github_opentracing_opentracing_go",
@@ -282,6 +290,33 @@ def go_repositories():
         # gazelle args: -go_prefix google.golang.org/grpc -proto disable
     )
     go_repository(
+        name = "org_golang_x_crypto",
+        importpath = "golang.org/x/crypto",
+        urls = [
+            "https://codeload.github.com/golang/crypto/tar.gz/34f69633bfdcf9db92f698f8487115767eebef81",
+        ],
+        strip_prefix = "crypto-34f69633bfdcf9db92f698f8487115767eebef81",
+        type = "tar.gz",
+    )
+    go_repository(
+        name = "org_golang_x_lint",
+        importpath = "golang.org/x/lint",
+        urls = [
+            "https://codeload.github.com/golang/lint/tar.gz/16217165b5de779cb6a5e4fc81fa9c1166fda457",
+        ],
+        strip_prefix = "lint-16217165b5de779cb6a5e4fc81fa9c1166fda457",
+        type = "tar.gz",
+    )
+    go_repository(
+        name = "org_golang_x_time",
+        importpath = "golang.org/x/time",
+        urls = [
+            "https://codeload.github.com/golang/time/tar.gz/c4c64cad1fd0a1a8dab2523e04e61d35308e131e",
+        ],
+        strip_prefix = "time-c4c64cad1fd0a1a8dab2523e04e61d35308e131e",
+        type = "tar.gz",
+    )
+    go_repository(
         name = "org_golang_x_oauth2",
         importpath = "golang.org/x/oauth2",
         urls = [
@@ -341,14 +376,27 @@ def go_repositories():
         type = "tar.gz",
         build_file_proto_mode = "disable",
     )
-    # go_repository(
-    #     name = "io_k8s_klog",
-    #     importpath = "k8s.io/klog",
-    #     urls = ["https://codeload.github.com/kubernetes/klog/tar.gz/ab80cd2723c29ccc40ab8b81ba5e1f947b08bf74"],
-    #     strip_prefix = "klog-ab80cd2723c29ccc40ab8b81ba5e1f947b08bf74",
-    #     type = "tar.gz",
-    #     build_file_proto_mode = "disable",
-    # )
+    go_repository(
+        name = "io_k8s_klog",
+        importpath = "k8s.io/klog",
+        urls = ["https://codeload.github.com/kubernetes/klog/tar.gz/e531227889390a39d9533dde61f590fe9f4b0035"],
+        strip_prefix = "klog-e531227889390a39d9533dde61f590fe9f4b0035",
+        type = "tar.gz",
+    )
+    go_repository(
+        name = "io_k8s_utils",
+        importpath = "k8s.io/utils",
+        urls = ["https://codeload.github.com/kubernetes/utils/tar.gz/69764acb6e8e900b7c05296c5d3c9c19545475f9"],
+        strip_prefix = "utils-69764acb6e8e900b7c05296c5d3c9c19545475f9",
+        type = "tar.gz",
+    )
+    go_repository(
+        name = "io_k8s_sigs_yaml",
+        importpath = "sigs.k8s.io/yaml",
+        urls = ["https://codeload.github.com/kubernetes-sigs/yaml/tar.gz/fd68e9863619f6ec2fdd8625fe1f02e7c877e480"],
+        strip_prefix = "yaml-fd68e9863619f6ec2fdd8625fe1f02e7c877e480",
+        type = "tar.gz",
+    )
     go_repository(
         name = "io_upper_db_v3",
         importpath = "upper.io/db.v3",

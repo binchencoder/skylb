@@ -12,7 +12,7 @@ gengoats_go(
 go_library(
     name = "dashboard_html",
     srcs = [":dashboard_html_gosrc"],
-    importpath = "github.com/binchencoder/skylb/dashboard/templates/dashboard_html",
+    importpath = "binchencoder.com/skylb/dashboard/templates/dashboard_html",
     deps = [
         "/dashboard/proto:go_default_library",
         "@com_github_linuxerwang_goats_html//runtime:go_default_library",
@@ -45,7 +45,7 @@ gengoats_go(
 go_library(
     name = "loginbox_html",
     srcs = [":loginbox_html_gosrc"],
-    importpath = "github.com/binchencoder/skylb/dashboard/templates/loginbox_html",
+    importpath = "binchencoder.com/skylb/dashboard/templates/loginbox_html",
     deps = [
         "@com_github_linuxerwang_goats_html//runtime:go_default_library",
     ],
@@ -62,7 +62,7 @@ gengoats_go(
 go_library(
     name = "login_html",
     srcs = [":login_html_gosrc"],
-    importpath = "github.com/binchencoder/skylb/dashboard/templates/login_html",
+    importpath = "binchencoder.com/skylb/dashboard/templates/login_html",
     deps = [
         ":loginbox_html",
         "@com_github_linuxerwang_goats_html//runtime:go_default_library",

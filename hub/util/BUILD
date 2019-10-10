@@ -7,7 +7,7 @@ go_library(
     srcs = [
         "key.go",
     ],
-    importpath = "github.com/binchencoder/skylb/hub/util",
+    importpath = "binchencoder.com/skylb/hub/util",
 )
 
 go_test(

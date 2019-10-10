@@ -1,4 +1,4 @@
-module github.com/binchencoder/skylb
+module binchencoder.com/skylb
 
 replace (
 	cloud.google.com/go => github.com/googleapis/google-cloud-go v0.34.0
@@ -26,8 +26,8 @@ require (
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
-	github.com/binchencoder/letsgo v0.0.0-20190818022557-3a34eef5d154
-	github.com/binchencoder/skylb-api v0.0.0-20190818031902-43a2566186d2
+	binchencoder.com/letsgo v0.0.0-20190818022557-3a34eef5d154
+	binchencoder.com/skylb-api v0.0.0-20190818031902-43a2566186d2
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/coreos/bbolt v1.3.3 // indirect
 	github.com/coreos/etcd v3.3.15+incompatible

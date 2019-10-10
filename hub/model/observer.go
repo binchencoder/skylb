@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	pb "github.com/binchencoder/skylb-api/proto"
+	pb "binchencoder.com/skylb-api/proto"
 )
 
 var (

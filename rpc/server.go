@@ -13,9 +13,9 @@ import (
 	prom "github.com/prometheus/client_golang/prometheus"
 	"google.golang.org/grpc/peer"
 
-	"github.com/binchencoder/skylb-api/lameduck"
-	pb "github.com/binchencoder/skylb-api/proto"
-	"github.com/binchencoder/skylb/hub"
+	"binchencoder.com/skylb-api/lameduck"
+	pb "binchencoder.com/skylb-api/proto"
+	"binchencoder.com/skylb/hub"
 )
 
 var (

@@ -8,9 +8,9 @@ import (
 
 	"github.com/kataras/iris"
 
-	"github.com/binchencoder/letsgo"
-	"github.com/binchencoder/skylb/dashboard"
-	"github.com/binchencoder/skylb/dashboard/db"
+	"binchencoder.com/letsgo"
+	"binchencoder.com/skylb/dashboard"
+	"binchencoder.com/skylb/dashboard/db"
 )
 
 const (

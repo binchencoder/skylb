@@ -19,10 +19,10 @@ github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24
 github.com/beorn7/perks v1.0.0/go.mod h1:KWe93zE9D1o94FZ5RNwFwVgaQK1VOXiVxmqh+CedLV8=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
-github.com/binchencoder/letsgo v0.0.0-20190818022557-3a34eef5d154 h1:pIZtQgDg2uz3KP6ZSWA7A4wZUV2ap0Ke8v9dXeji4Zg=
-github.com/binchencoder/letsgo v0.0.0-20190818022557-3a34eef5d154/go.mod h1:PtbskerPeGc/zsawFU3Rg2xa8bTTv+aFzoNH3D2T89c=
-github.com/binchencoder/skylb-api v0.0.0-20190818031902-43a2566186d2 h1:4ymqJWWyTD+5s7Pb3XcJjewEx48pLtnBuHLqMeq5f3M=
-github.com/binchencoder/skylb-api v0.0.0-20190818031902-43a2566186d2/go.mod h1:fWPN557983dyp9TAK2qrY71zksK7Yovwtix2jjncu3I=
+binchencoder.com/letsgo v0.0.0-20190818022557-3a34eef5d154 h1:pIZtQgDg2uz3KP6ZSWA7A4wZUV2ap0Ke8v9dXeji4Zg=
+binchencoder.com/letsgo v0.0.0-20190818022557-3a34eef5d154/go.mod h1:PtbskerPeGc/zsawFU3Rg2xa8bTTv+aFzoNH3D2T89c=
+binchencoder.com/skylb-api v0.0.0-20190818031902-43a2566186d2 h1:4ymqJWWyTD+5s7Pb3XcJjewEx48pLtnBuHLqMeq5f3M=
+binchencoder.com/skylb-api v0.0.0-20190818031902-43a2566186d2/go.mod h1:fWPN557983dyp9TAK2qrY71zksK7Yovwtix2jjncu3I=
 github.com/cenkalti/backoff v2.2.1+incompatible h1:tNowT99t7UNflLxfYYSlKYsBpXdEet03Pg2g16Swow4=
 github.com/cenkalti/backoff v2.2.1+incompatible/go.mod h1:90ReRw6GdpyfrHakVjL/QHaoyV4aDUVVkXQJJJ3NXXM=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=

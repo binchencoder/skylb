@@ -7,8 +7,8 @@ import (
 
 	"github.com/golang/glog"
 
-	pb "github.com/binchencoder/skylb-api/proto"
-	"github.com/binchencoder/skylb/hub/util"
+	pb "binchencoder.com/skylb-api/proto"
+	"binchencoder.com/skylb/hub/util"
 )
 
 var (

@@ -4,8 +4,8 @@ import (
 	"github.com/golang/glog"
 	"github.com/kataras/iris"
 
-	db "github.com/binchencoder/skylb/dashboard/db"
-	tpl "github.com/binchencoder/skylb/dashboard/templates/dashboard_html"
+	db "binchencoder.com/skylb/dashboard/db"
+	tpl "binchencoder.com/skylb/dashboard/templates/dashboard_html"
 )
 
 func homeHandler(ctx *iris.Context) {

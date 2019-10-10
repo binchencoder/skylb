@@ -9,8 +9,8 @@ import (
 
 	"github.com/golang/glog"
 
-	"github.com/binchencoder/letsgo"
-	"github.com/binchencoder/letsgo/strings"
+	"binchencoder.com/letsgo"
+	"binchencoder.com/letsgo/strings"
 )
 
 var (

@@ -20,7 +20,7 @@ import (
 	"github.com/peterh/liner"
 	api "k8s.io/api/core/v1"
 
-	"github.com/binchencoder/letsgo"
+	"binchencoder.com/letsgo"
 )
 
 const (

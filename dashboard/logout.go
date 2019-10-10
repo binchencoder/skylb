@@ -4,7 +4,7 @@ import (
 	"github.com/golang/glog"
 	"github.com/kataras/iris"
 
-	"github.com/binchencoder/skylb/dashboard/db"
+	"binchencoder.com/skylb/dashboard/db"
 )
 
 func logoutHandler(ctx *iris.Context) {

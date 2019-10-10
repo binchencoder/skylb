@@ -5,7 +5,7 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	pb "github.com/binchencoder/skylb-api/proto"
+	pb "binchencoder.com/skylb-api/proto"
 )
 
 func TestClientObserver(t *testing.T) {
