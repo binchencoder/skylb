@@ -19,16 +19,16 @@ import (
 	"github.com/golang/glog"
 	"google.golang.org/grpc"
 
+	vexpb "binchencoder.com/gateway-proto/data"
 	"binchencoder.com/letsgo"
 	"binchencoder.com/letsgo/service/naming"
 	skylbserver "binchencoder.com/skylb-api/server"
 	"binchencoder.com/skylb/cmd/grpchealth"
 	"binchencoder.com/skylb/hub"
-	vexpb "binchencoder.com/ease-gateway/proto/data"
 )
 
 var (
-	defaultSvcName, _ = naming.ServiceIdToName(vexpb.ServiceId_DORY_SERVICE)
+	defaultSvcName, _ = naming.ServiceIdToName(vexpb.ServiceId_SHARED_TEST_SERVER_SERVICE)
 	targetServiceName = flag.String("target-service", defaultSvcName,
 		"The target service name. "+
 			"If --etcd-endpoints is specified, --target-service will be ignored, "+

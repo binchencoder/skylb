@@ -14,7 +14,7 @@ import (
 
 	pb "binchencoder.com/skylb-api/proto"
 	"binchencoder.com/skylb/hub"
-	data "binchencoder.com/ease-gateway/proto/data"
+	data "binchencoder.com/gateway-proto/data"
 )
 
 // EndpointsHubMock mocks interface EndpointsHubMock.

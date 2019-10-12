@@ -13,7 +13,7 @@ import (
 	"binchencoder.com/skylb-api/lameduck"
 	pb "binchencoder.com/skylb/dashboard/proto"
 	"binchencoder.com/skylb/dashboard/util"
-	vex "binchencoder.com/ease-gateway/proto/data"
+	vex "binchencoder.com/gateway-proto/data"
 )
 
 func getAllServicesHandler(ctx *iris.Context) {

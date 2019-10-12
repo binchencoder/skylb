@@ -25,9 +25,9 @@ def go_repositories():
         name = "com_github_binchencoder_gateway_proto",
         importpath = "binchencoder.com/gateway-proto",
         urls = [
-            "https://codeload.github.com/binchencoder/gateway-proto/tar.gz/c099a5a6646c572557bc8326f4d952fba4165a3b",
+            "https://codeload.github.com/binchencoder/gateway-proto/tar.gz/1a34b562e1a85e05485b51fa49833d5c3e0bca89",
         ],
-        strip_prefix = "gateway-proto-c099a5a6646c572557bc8326f4d952fba4165a3b",
+        strip_prefix = "gateway-proto-1a34b562e1a85e05485b51fa49833d5c3e0bca89",
         type = "tar.gz",
         # gazelle args: -go_prefix binchencoder.com/gateway-proto
     )
@@ -117,6 +117,24 @@ def go_repositories():
         type = "tar.gz",
     )
     go_repository(
+        name = "com_github_grpc_ecosystem_grpc_opentracing",
+        importpath = "github.com/grpc-ecosystem/grpc-opentracing",
+        urls = [
+            "https://codeload.github.com/grpc-ecosystem/grpc-opentracing/tar.gz/8e809c8a86450a29b90dcc9efbf062d0fe6d9746",
+        ],
+        strip_prefix = "grpc-opentracing-8e809c8a86450a29b90dcc9efbf062d0fe6d9746",
+        type = "tar.gz",
+    )
+    go_repository(
+        name = "com_github_grpc_ecosystem_go_grpc_middleware",
+        importpath = "github.com/grpc-ecosystem/go-grpc-middleware",
+        urls = [
+            "https://codeload.github.com/grpc-ecosystem/go-grpc-middleware/tar.gz/e0797f438f94f4d032395b8f71aae0e73d6efa08",
+        ],
+        strip_prefix = "go-grpc-middleware-e0797f438f94f4d032395b8f71aae0e73d6efa08",
+        type = "tar.gz",
+    )
+    go_repository(
         name = "com_github_hashicorp_golang_lru",
         importpath = "github.com/hashicorp/golang-lru",
         commit = "7f827b33c0f158ec5dfbba01bb0b14a4541fd81d",
@@ -153,6 +171,11 @@ def go_repositories():
         name = "com_github_matttproud_golang_protobuf_extensions",
         importpath = "github.com/matttproud/golang_protobuf_extensions",
         commit = "c182affec369e30f25d3eb8cd8a478dee585ae7d",
+    )
+    go_repository(
+        name = "com_github_mattn_go_runewidth",
+        importpath = "github.com/mattn/go-runewidth",
+        commit = "703b5e6b11ae25aeb2af9ebb5d5fdf8fa2575211",
     )
     go_repository(
         name = "com_github_modern_go_reflect2",

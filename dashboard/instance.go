@@ -15,7 +15,7 @@ import (
 	"binchencoder.com/skylb-api/lameduck"
 	"binchencoder.com/skylb/dashboard/db"
 	pb "binchencoder.com/skylb/dashboard/proto"
-	"binchencoder.com/ease-gateway/proto/data"
+	"binchencoder.com/gateway-proto/data"
 )
 
 var (
