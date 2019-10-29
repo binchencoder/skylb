@@ -15,9 +15,9 @@ def go_repositories():
         name = "com_github_binchencoder_skylb_api",
         importpath = "binchencoder.com/skylb-api",
         urls = [
-            "https://codeload.github.com/binchencoder/skylb-api/tar.gz/43a2566186d2411255f6818afce1cb5639cf42c5",
+            "https://codeload.github.com/binchencoder/skylb-api/tar.gz/50ba73497500a4239c089a8fb0772d0fd23cc1a1",
         ],
-        strip_prefix = "skylb-api-43a2566186d2411255f6818afce1cb5639cf42c5",
+        strip_prefix = "skylb-api-50ba73497500a4239c089a8fb0772d0fd23cc1a1",
         type = "tar.gz",
         # gazelle args: -go_prefix binchencoder.com/skylb-api
     )
