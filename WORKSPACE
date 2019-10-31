@@ -99,15 +99,20 @@ gazelle_dependencies()
 load("//:repositories.bzl", "go_repositories")
 go_repositories()
 
-go_repository(
+# go_repository(
+#     name = "com_google_protobuf",
+#     importpath = "github.com/protocolbuffers/protobuf",
+#     urls = [
+#         "https://codeload.github.com/protocolbuffers/protobuf/tar.gz/09745575a923640154bcf307fba8aedff47f240a",
+#     ],
+#     strip_prefix = "protobuf-09745575a923640154bcf307fba8aedff47f240a",
+#     type = "tar.gz",
+# )
+local_repository(
     name = "com_google_protobuf",
-    importpath = "github.com/protocolbuffers/protobuf",
-    urls = [
-        "https://codeload.github.com/protocolbuffers/protobuf/tar.gz/09745575a923640154bcf307fba8aedff47f240a",
-    ],
-    strip_prefix = "protobuf-09745575a923640154bcf307fba8aedff47f240a",
-    type = "tar.gz",
+    path = "third_party/protobuf",
 )
+
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
@@ -120,3 +125,19 @@ http_archive(
 )
 load("@com_github_bazelbuild_buildtools//buildifier:deps.bzl", "buildifier_dependencies")
 buildifier_dependencies()
+
+# ---------- local repositories
+local_repository(
+    name = "com_github_binchencoder_gateway_proto",
+    path = "third_party/gateway-proto",
+)
+
+local_repository(
+    name = "com_github_binchencoder_letsgo",
+    path = "third_party/letsgo",
+)
+
+local_repository(
+    name = "com_github_binchencoder_skylb_api",
+    path = "third_party/skylb-api",
+)

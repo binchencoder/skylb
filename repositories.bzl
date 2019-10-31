@@ -1,36 +1,36 @@
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 
 def go_repositories():
-    go_repository(
-        name = "com_github_binchencoder_letsgo",
-        importpath = "binchencoder.com/letsgo",
-        urls = [
-            "https://codeload.github.com/binchencoder/letsgo/tar.gz/3a34eef5d1546b1be444e2e053d425e80afe100e",
-        ],
-        strip_prefix = "letsgo-3a34eef5d1546b1be444e2e053d425e80afe100e",
-        type = "tar.gz",
-        # gazelle args: -go_prefix binchencoder.com/letsgo
-    )
-    go_repository(
-        name = "com_github_binchencoder_skylb_api",
-        importpath = "binchencoder.com/skylb-api",
-        urls = [
-            "https://codeload.github.com/binchencoder/skylb-api/tar.gz/50ba73497500a4239c089a8fb0772d0fd23cc1a1",
-        ],
-        strip_prefix = "skylb-api-50ba73497500a4239c089a8fb0772d0fd23cc1a1",
-        type = "tar.gz",
-        # gazelle args: -go_prefix binchencoder.com/skylb-api
-    )
-    go_repository(
-        name = "com_github_binchencoder_gateway_proto",
-        importpath = "binchencoder.com/gateway-proto",
-        urls = [
-            "https://codeload.github.com/binchencoder/gateway-proto/tar.gz/1a34b562e1a85e05485b51fa49833d5c3e0bca89",
-        ],
-        strip_prefix = "gateway-proto-1a34b562e1a85e05485b51fa49833d5c3e0bca89",
-        type = "tar.gz",
-        # gazelle args: -go_prefix binchencoder.com/gateway-proto
-    )
+    # go_repository(
+    #     name = "com_github_binchencoder_letsgo",
+    #     importpath = "binchencoder.com/letsgo",
+    #     urls = [
+    #         "https://codeload.github.com/binchencoder/letsgo/tar.gz/3a34eef5d1546b1be444e2e053d425e80afe100e",
+    #     ],
+    #     strip_prefix = "letsgo-3a34eef5d1546b1be444e2e053d425e80afe100e",
+    #     type = "tar.gz",
+    #     # gazelle args: -go_prefix binchencoder.com/letsgo
+    # )
+    # go_repository(
+    #     name = "com_github_binchencoder_skylb_api",
+    #     importpath = "binchencoder.com/skylb-api",
+    #     urls = [
+    #         "https://codeload.github.com/binchencoder/skylb-api/tar.gz/50ba73497500a4239c089a8fb0772d0fd23cc1a1",
+    #     ],
+    #     strip_prefix = "skylb-api-50ba73497500a4239c089a8fb0772d0fd23cc1a1",
+    #     type = "tar.gz",
+    #     # gazelle args: -go_prefix binchencoder.com/skylb-api
+    # )
+    # go_repository(
+    #     name = "com_github_binchencoder_gateway_proto",
+    #     importpath = "binchencoder.com/gateway-proto",
+    #     urls = [
+    #         "https://codeload.github.com/binchencoder/gateway-proto/tar.gz/1a34b562e1a85e05485b51fa49833d5c3e0bca89",
+    #     ],
+    #     strip_prefix = "gateway-proto-1a34b562e1a85e05485b51fa49833d5c3e0bca89",
+    #     type = "tar.gz",
+    #     # gazelle args: -go_prefix binchencoder.com/gateway-proto
+    # )
 
     go_repository(
         name = "com_github_beorn7_perks",
