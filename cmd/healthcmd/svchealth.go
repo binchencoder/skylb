@@ -19,12 +19,12 @@ import (
 	"github.com/golang/glog"
 	"google.golang.org/grpc"
 
-	vexpb "binchencoder.com/gateway-proto/data"
-	"binchencoder.com/letsgo"
-	"binchencoder.com/letsgo/service/naming"
-	skylbserver "binchencoder.com/skylb-api/server"
-	"binchencoder.com/skylb/cmd/grpchealth"
-	"binchencoder.com/skylb/hub"
+	vexpb "github.com/binchencoder/gateway-proto/data"
+	"github.com/binchencoder/letsgo"
+	"github.com/binchencoder/letsgo/service/naming"
+	skylbserver "github.com/binchencoder/skylb-api/server"
+	"github.com/binchencoder/skylb/cmd/grpchealth"
+	"github.com/binchencoder/skylb/hub"
 )
 
 var (

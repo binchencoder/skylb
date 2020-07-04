@@ -12,9 +12,9 @@ import (
 
 	"errors"
 
-	pb "binchencoder.com/skylb-api/proto"
-	"binchencoder.com/skylb/hub"
-	data "binchencoder.com/gateway-proto/data"
+	pb "github.com/binchencoder/skylb-api/proto"
+	"github.com/binchencoder/skylb/hub"
+	data "github.com/binchencoder/gateway-proto/data"
 )
 
 // EndpointsHubMock mocks interface EndpointsHubMock.

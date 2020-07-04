@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	pb "binchencoder.com/skylb-api/proto"
-	"binchencoder.com/skylb/hub"
+	pb "github.com/binchencoder/skylb-api/proto"
+	"github.com/binchencoder/skylb/hub"
 )
 
 var (

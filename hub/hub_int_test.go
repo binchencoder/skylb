@@ -7,7 +7,7 @@ import (
 	etcd "github.com/coreos/etcd/client"
 	"golang.org/x/net/context"
 
-	pb "binchencoder.com/skylb-api/proto"
+	pb "github.com/binchencoder/skylb-api/proto"
 )
 
 func TestTrackServiceGraph(t *testing.T) {

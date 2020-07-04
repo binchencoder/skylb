@@ -12,8 +12,8 @@ import (
 	"golang.org/x/net/context"
 	api "k8s.io/api/core/v1"
 
-	"binchencoder.com/skylb-api/prefix"
-	pb "binchencoder.com/skylb-api/proto"
+	"github.com/binchencoder/skylb-api/prefix"
+	pb "github.com/binchencoder/skylb-api/proto"
 )
 
 const (

@@ -6,7 +6,7 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 	api "k8s.io/api/core/v1"
 
-	pb "binchencoder.com/skylb-api/proto"
+	pb "github.com/binchencoder/skylb-api/proto"
 )
 
 const (

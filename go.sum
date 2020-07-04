@@ -1,7 +1,7 @@
-binchencoder.com/letsgo v0.0.0-20190818022557-3a34eef5d154 h1:pIZtQgDg2uz3KP6ZSWA7A4wZUV2ap0Ke8v9dXeji4Zg=
-binchencoder.com/letsgo v0.0.0-20190818022557-3a34eef5d154/go.mod h1:PtbskerPeGc/zsawFU3Rg2xa8bTTv+aFzoNH3D2T89c=
-binchencoder.com/skylb-api v0.0.0-20190818031902-43a2566186d2 h1:4ymqJWWyTD+5s7Pb3XcJjewEx48pLtnBuHLqMeq5f3M=
-binchencoder.com/skylb-api v0.0.0-20190818031902-43a2566186d2/go.mod h1:fWPN557983dyp9TAK2qrY71zksK7Yovwtix2jjncu3I=
+github.com/binchencoder/letsgo v0.0.0-20190818022557-3a34eef5d154 h1:pIZtQgDg2uz3KP6ZSWA7A4wZUV2ap0Ke8v9dXeji4Zg=
+github.com/binchencoder/letsgo v0.0.0-20190818022557-3a34eef5d154/go.mod h1:PtbskerPeGc/zsawFU3Rg2xa8bTTv+aFzoNH3D2T89c=
+github.com/binchencoder/skylb-api v0.0.0-20190818031902-43a2566186d2 h1:4ymqJWWyTD+5s7Pb3XcJjewEx48pLtnBuHLqMeq5f3M=
+github.com/binchencoder/skylb-api v0.0.0-20190818031902-43a2566186d2/go.mod h1:fWPN557983dyp9TAK2qrY71zksK7Yovwtix2jjncu3I=
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=

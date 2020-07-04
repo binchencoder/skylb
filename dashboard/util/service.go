@@ -3,7 +3,7 @@ package util
 import (
 	"strings"
 
-	vex "binchencoder.com/gateway-proto/data"
+	vex "github.com/binchencoder/gateway-proto/data"
 )
 
 var (

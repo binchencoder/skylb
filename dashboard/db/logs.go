@@ -8,8 +8,8 @@ import (
 	"github.com/golang/glog"
 	"upper.io/db.v3/lib/sqlbuilder"
 
-	pb "binchencoder.com/skylb/dashboard/proto"
-	"binchencoder.com/skylb/dashboard/util"
+	pb "github.com/binchencoder/skylb/dashboard/proto"
+	"github.com/binchencoder/skylb/dashboard/util"
 )
 
 const (

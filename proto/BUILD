@@ -8,5 +8,5 @@ go_library(
         ["*.go"],
         exclude = ["*_test.go"],
     ),
-    importpath = "binchencoder.com/skylb/proto",
+    importpath = "github.com/binchencoder/skylb/proto",
 )

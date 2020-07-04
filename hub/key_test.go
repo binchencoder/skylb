@@ -7,8 +7,8 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"binchencoder.com/letsgo/testing/mocks/etcd"
-	pb "binchencoder.com/skylb-api/proto"
+	"github.com/binchencoder/letsgo/testing/mocks/etcd"
+	pb "github.com/binchencoder/skylb-api/proto"
 )
 
 const (

@@ -7,6 +7,6 @@ go_library(
     srcs = [
         "service.go",
     ],
-    importpath = "binchencoder.com/skylb/dashboard/util",
+    importpath = "github.com/binchencoder/skylb/dashboard/util",
     deps = ["@com_github_binchencoder_gateway_proto//data:go_default_library"],
 )

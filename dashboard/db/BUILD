@@ -10,7 +10,7 @@ go_library(
         "tx.go",
         "users.go",
     ],
-    importpath = "binchencoder.com/skylb/dashboard/db",
+    importpath = "github.com/binchencoder/skylb/dashboard/db",
     deps = [
         "@com_github_binchencoder_letsgo//ldap:go_default_library",
         "//dashboard/proto:go_default_library",

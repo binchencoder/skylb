@@ -6,9 +6,9 @@ import (
 	"github.com/kataras/iris"
 	"golang.org/x/net/context"
 
-	"binchencoder.com/skylb/dashboard/db"
-	pb "binchencoder.com/skylb/dashboard/proto"
-	tpl "binchencoder.com/skylb/dashboard/templates/login_html"
+	"github.com/binchencoder/skylb/dashboard/db"
+	pb "github.com/binchencoder/skylb/dashboard/proto"
+	tpl "github.com/binchencoder/skylb/dashboard/templates/login_html"
 )
 
 func loginGetHandler(ctx *iris.Context) {

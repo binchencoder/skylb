@@ -13,13 +13,13 @@ import (
 	"google.golang.org/grpc/health"
 	hpb "google.golang.org/grpc/health/grpc_health_v1"
 
-	"binchencoder.com/letsgo"
-	jgrpc "binchencoder.com/letsgo/grpc"
-	lmetrics "binchencoder.com/letsgo/metrics"
-	"binchencoder.com/letsgo/runtime/pprof"
-	"binchencoder.com/skylb-api/metrics"
-	pb "binchencoder.com/skylb-api/proto"
-	"binchencoder.com/skylb/rpc"
+	"github.com/binchencoder/letsgo"
+	jgrpc "github.com/binchencoder/letsgo/grpc"
+	lmetrics "github.com/binchencoder/letsgo/metrics"
+	"github.com/binchencoder/letsgo/runtime/pprof"
+	"github.com/binchencoder/skylb-api/metrics"
+	pb "github.com/binchencoder/skylb-api/proto"
+	"github.com/binchencoder/skylb/rpc"
 )
 
 var (

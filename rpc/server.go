@@ -13,9 +13,9 @@ import (
 	prom "github.com/prometheus/client_golang/prometheus"
 	"google.golang.org/grpc/peer"
 
-	"binchencoder.com/skylb-api/lameduck"
-	pb "binchencoder.com/skylb-api/proto"
-	"binchencoder.com/skylb/hub"
+	"github.com/binchencoder/skylb-api/lameduck"
+	pb "github.com/binchencoder/skylb-api/proto"
+	"github.com/binchencoder/skylb/hub"
 )
 
 var (
@@ -188,14 +188,18 @@ func (ss *skylbServer) Resolve(req *pb.ResolveRequest, stream pb.Skylb_ResolveSe
 	for {
 		select {
 		case <-timer.C:
+			fmt.Println("Auto disconnect with client")
 			glog.Infoln("Auto disconnect with client")
 			autoDisconnCounts.Inc()
 			return nil
 		case updates, ok := <-notiCh:
 			if !ok {
 				// Channel has been closed.
+				fmt.Printf("SkyLb server #Resolve: AddObserver notify chan has been closed. \n")
 				return nil
 			}
+
+			fmt.Printf("SkyLb server #Resolve:  receive AddObserver notify chan %+v. \n", updates)
 
 			notifyChanUsageHistogram.Observe(float64(len(notiCh)) / hub.ChanCapMultiplication / float64(len(req.Services)))
 
@@ -245,6 +249,7 @@ func (ss *skylbServer) Resolve(req *pb.ResolveRequest, stream pb.Skylb_ResolveSe
 					ch <- err
 					return
 				}
+				fmt.Printf("stream send %+v \n", resp)
 				ch <- nil
 			}(errCh)
 
@@ -285,6 +290,7 @@ func (ss *skylbServer) ReportLoad(stream pb.Skylb_ReportLoadServer) error {
 	}
 
 	glog.Infof("Start accepting load report from %s.", host)
+	fmt.Printf("Start accepting load report from %s. \n", host)
 	activeReporterGauge.WithLabelValues(host).Inc()
 	defer func() {
 		activeReporterGauge.WithLabelValues(host).Dec()
@@ -331,6 +337,7 @@ func (ss *skylbServer) ReportLoad(stream pb.Skylb_ReportLoadServer) error {
 			continue
 		}
 		glog.V(4).Infof("Received load report from %s:%d.", h, req.Port)
+		fmt.Printf("Received load report from %s:%d. \n", h, req.Port)
 
 		if err := ss.epsHub.UpsertEndpoint(req.Spec, h, req.Port, req.Weight); err != nil {
 			glog.Errorf("Failed to update etcd entry for endpoint %s:%d, closing the report stream.", h, req.Port)

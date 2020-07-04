@@ -16,12 +16,12 @@ import (
 	"golang.org/x/net/context"
 	api "k8s.io/api/core/v1"
 
-	"binchencoder.com/letsgo/strings"
-	jsync "binchencoder.com/letsgo/sync"
-	"binchencoder.com/skylb-api/lameduck"
-	"binchencoder.com/skylb-api/prefix"
-	pb "binchencoder.com/skylb-api/proto"
-	"binchencoder.com/skylb-api/util"
+	"github.com/binchencoder/letsgo/strings"
+	jsync "github.com/binchencoder/letsgo/sync"
+	"github.com/binchencoder/skylb-api/lameduck"
+	"github.com/binchencoder/skylb-api/prefix"
+	pb "github.com/binchencoder/skylb-api/proto"
+	"github.com/binchencoder/skylb-api/util"
 )
 
 const (
@@ -379,6 +379,7 @@ func (eh *endpointsHub) startGraphTracking() {
 		eh.graphKeysLock.RUnlock()
 
 		timestamp := fmt.Sprintf("%d", time.Now().Unix())
+		fmt.Printf("startGraphTracking: timestamp %s", timestamp)
 		for k := range keys {
 			if _, err := eh.etcdCli.Set(context.Background(), k, timestamp, setGraphOpts); nil != err {
 				glog.Warningf("Save service graph key %s in etcd err: %#v", k, err)

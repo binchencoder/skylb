@@ -8,11 +8,11 @@ import (
 	"github.com/golang/glog"
 	"github.com/kataras/iris"
 
-	"binchencoder.com/letsgo/service/naming"
-	"binchencoder.com/skylb-api/lameduck"
-	"binchencoder.com/skylb/dashboard/db"
-	pb "binchencoder.com/skylb/dashboard/proto"
-	"binchencoder.com/gateway-proto/data"
+	"github.com/binchencoder/letsgo/service/naming"
+	"github.com/binchencoder/skylb-api/lameduck"
+	"github.com/binchencoder/skylb/dashboard/db"
+	pb "github.com/binchencoder/skylb/dashboard/proto"
+	"github.com/binchencoder/gateway-proto/data"
 )
 
 func toggleLameduckHandler(ctx *iris.Context) {

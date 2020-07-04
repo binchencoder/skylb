@@ -13,6 +13,6 @@ buildifier(
 # gazelle:exclude third_party
 # gazelle:exclude vendor
 # gazelle:exclude _output
-# gazelle:prefix binchencoder.com/skylb
+# gazelle:prefix github.com/binchencoder/skylb
 
 gazelle(name = "gazelle")

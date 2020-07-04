@@ -13,7 +13,7 @@ go_library(
         "observer.go",
         "svcgraph.go",
     ],
-    importpath = "binchencoder.com/skylb/hub",
+    importpath = "github.com/binchencoder/skylb/hub",
     deps = [
         "@com_github_binchencoder_letsgo//strings:go_default_library",
         "@com_github_binchencoder_letsgo//sync:go_default_library",

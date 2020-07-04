@@ -7,8 +7,8 @@ import (
 	etcd "github.com/coreos/etcd/client"
 	"github.com/golang/glog"
 
-	"binchencoder.com/letsgo/strings"
-	"binchencoder.com/skylb-api/prefix"
+	"github.com/binchencoder/letsgo/strings"
+	"github.com/binchencoder/skylb-api/prefix"
 )
 
 var (

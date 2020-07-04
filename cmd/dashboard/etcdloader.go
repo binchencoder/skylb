@@ -10,7 +10,7 @@ import (
 	etcd "github.com/coreos/etcd/client"
 	"github.com/golang/glog"
 
-	"binchencoder.com/letsgo/strings"
+	"github.com/binchencoder/letsgo/strings"
 )
 
 var (

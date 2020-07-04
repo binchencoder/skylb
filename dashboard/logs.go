@@ -6,8 +6,8 @@ import (
 	"github.com/kataras/iris"
 	"golang.org/x/net/context"
 
-	"binchencoder.com/skylb/dashboard/db"
-	pb "binchencoder.com/skylb/dashboard/proto"
+	"github.com/binchencoder/skylb/dashboard/db"
+	pb "github.com/binchencoder/skylb/dashboard/proto"
 )
 
 func getLogsHandler(ctx *iris.Context) {

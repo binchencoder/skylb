@@ -13,8 +13,8 @@ import (
 	db "upper.io/db.v3"
 	"upper.io/db.v3/lib/sqlbuilder"
 
-	"binchencoder.com/letsgo/ldap"
-	pb "binchencoder.com/skylb/dashboard/proto"
+	"github.com/binchencoder/letsgo/ldap"
+	pb "github.com/binchencoder/skylb/dashboard/proto"
 )
 
 const (
