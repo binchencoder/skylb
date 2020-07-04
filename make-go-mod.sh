@@ -72,7 +72,7 @@ rep=$(echo "$rep" | sort)
 mirrors=$(cat repositories.txt)
 
 cat <<EOF >go.mod
-module github.com
+module github.com/binchencoder/
 
 go 1.13
 

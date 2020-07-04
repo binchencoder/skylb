@@ -5,7 +5,7 @@ def go_repositories():
         name = "com_github_binchencoder_letsgo",
         importpath = "github.com/binchencoder/letsgo",
         sum = "h1:VKiaQOatUCmm0qZcM2y6w/3jPS6I3NmysgsVb4olpEM=",
-        version = "v0.0.0-20200704091533-eaa763a25eeb",
+        version = "v0.0.0-20200704112152-304bb8b58b21",
     )
     go_repository(
         name = "com_github_binchencoder_skylb_api",

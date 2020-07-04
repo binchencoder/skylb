@@ -6,7 +6,7 @@ require (
 	github.com/VividCortex/gohistogram v1.0.0
 	github.com/beorn7/perks v1.0.1
 	github.com/binchencoder/gateway-proto v0.0.0-20200704042644-d47e63e63f70
-	github.com/binchencoder/letsgo v0.0.0-20200704091533-eaa763a25eeb
+	github.com/binchencoder/letsgo v0.0.0-20200704112152-304bb8b58b21
 	github.com/binchencoder/skylb-api v0.0.0-20200704070454-a8ce6d587e27
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/cespare/xxhash/v2 v2.1.1
@@ -60,9 +60,4 @@ require (
 	k8s.io/api v0.0.0-20180329025053-c4ebf33f9308
 	k8s.io/apimachinery v0.0.0-20180328184639-0ed326127d30
 	k8s.io/client-go v0.0.0-20180328185441-88e8ea169afa
-)
-
-replace (
-
-
 )
