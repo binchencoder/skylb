@@ -1,4 +1,4 @@
-module github.com
+module github.com/binchencoder/skylb
 
 go 1.13
 
@@ -36,12 +36,12 @@ require (
 	github.com/pborman/uuid v1.2.0
 	github.com/peterh/liner v1.2.0
 	github.com/pkg/errors v0.9.1
-	github.com/prometheus/client_golang v0.9.4
+	github.com/prometheus/client_golang v1.3.0
 	github.com/prometheus/client_model v0.2.0
 	github.com/prometheus/common v0.10.0
 	github.com/prometheus/procfs v0.1.3
 	github.com/smartystreets/assertions v1.0.1
-	github.com/smartystreets/goconvey v1.6.3
+	github.com/smartystreets/goconvey v1.6.4
 	github.com/soheilhy/cmux v0.1.4
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/objx v0.2.0
