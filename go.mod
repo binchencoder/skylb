@@ -13,7 +13,7 @@ require (
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
 	github.com/binchencoder/letsgo v0.0.3
-	github.com/binchencoder/skylb-api v0.0.3
+	github.com/binchencoder/skylb-api v0.0.6
 	github.com/coreos/etcd v3.3.22+incompatible
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
@@ -50,7 +50,6 @@ require (
 	github.com/yudai/pp v2.0.1+incompatible // indirect
 	golang.org/x/net v0.0.0-20200625001655-4c5254603344
 	google.golang.org/grpc v1.30.0
-	google.golang.org/grpc/examples v0.0.0-20200630190442-3de8449f8555 // indirect
 	gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d // indirect
 	gopkg.in/ldap.v2 v2.5.1
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
