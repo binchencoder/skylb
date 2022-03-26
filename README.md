@@ -9,8 +9,7 @@ SkyLB can be used both in and out of Kubernetes.
 ### Prepare Source Code
 
 ```bash
-$ sc track skylb
-$ sc deps skylb
+$ git clone https://github.com/binchencoder/skylb.git
 ```
 
 ### Build with Bazel
